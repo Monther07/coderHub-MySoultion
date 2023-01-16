@@ -1,3 +1,26 @@
+
+function kSumSubset(dateString) {
+    // create a new Date object
+  let date = new Date(dateString);
+  // get the current date
+  let today = new Date();
+  // check if the input date is before today
+  if (date > today) {
+    return false;
+  }
+  // check if the input date is at least 4 years ago
+  if (date > new Date(today.getFullYear() - 4, today.getMonth(), today.getDate())) {
+    return false;
+  }
+  // check if the input date is not more than 200 years ago
+  if (date < new Date(today.getFullYear() - 200, today.getMonth(), today.getDate())) {
+    return false;
+  }
+  // if all checks pass, return true
+  return true;
+}
+
+
 /*
 وصف التحدي
 قم بكتابة دالة function تستقبل تاريخ ووقت على شكل قيمة نصية string. تقوم الدالة باللتحقق ما إن كان التاريخ المُدخل تاريخ عُمر صحيح أم لا. بحيث تقوم الداله بإرجاع القيمة True في حال كان التاريخ المُدخل تاريخاً صحيحاً وتقوم بإرجاع القيمة False في حال كان التاريخ المُدخل غير صحيح وذلك حسب الشروط التالية:
